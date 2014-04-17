@@ -9,18 +9,18 @@ get '/' do
 end
 
 post '/search' do
-  @schools = School.search(params[:search][:type], params[:search][:criteria])
-  @life_events = LifeEvent.search(params[:search][:type], params[:search][:criteria])
+  @schools = School.search(params[:search])
+  @life_events = LifeEvent.search(params[:search])
   erb :"/results"
 end
 
 post '/schools/results' do
-  @schools = School.search(params[:search][:type], params[:search][:criteria])
+  @schools = School.search(params[:search])
   erb :"schools/results"
 end
 
 post '/life_events/results' do
-  @life_events = LifeEvent.search(params[:search][:type], params[:search][:criteria])
+  @life_events = LifeEvent.search(params[:search])
   erb :"life_events/results"
 end
 
@@ -189,7 +189,9 @@ end
 
 class School < ActiveRecord::Base
 
-  def self.search(type, criteria)
+  def self.search(search_data)
+    type = search_data[:type]
+    criteria = search_data[:criteria]
     if type.downcase == "year"
       School.where("start_year <= ? AND end_year >= ?", criteria, criteria)
     elsif type.downcase == "lifeevent"
@@ -201,7 +203,9 @@ class School < ActiveRecord::Base
 end
 
 class LifeEvent < ActiveRecord::Base
-  def self.search(type, criteria)
+  def self.search(search_data)
+    type = search_data[:type]
+    criteria = search_data[:criteria]
       LifeEvent.where("#{type} == ? OR #{type} == ?", criteria, criteria.capitalize)
   end
 end
