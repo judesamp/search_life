@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="show">
+    <h3 class="center_me"><%= @life_event.name %></h3>
+      <p><%= @life_event.description %></p>
+      <p><%= @life_event.city %>, <%= @life_event.state %></p>
+      <p><%= @life_event.year %></p>
+      <p>Impact Rating: <%= @life_event.impact_rating %></p>
+    </div>
+    <p>Click <a href="/life_events/<%= @life_event.id %>/edit" class="leftpadded">here</a> to edit.</p>
+  </div>
+</div>
+
+

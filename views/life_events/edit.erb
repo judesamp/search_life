@@ -1,0 +1,53 @@
+
+
+<div class="listed col-md-6 col-md-offset-3">
+  <h3>Edit your life event below.</h3>
+
+  <div class="bottom">
+    <div class="marge2">
+
+      <form role="form" action="/life_events/<%= @life_event.id%>" method="post">
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="[life_event]name" placeholder="<%= @life_event.name %>">
+        </div>
+
+        <div class="form-group">
+          <label for="description">Enter a description of your life event</label>
+          <input type="text" class="form-control" id="description" name="[life_event]description" placeholder="<%= @life_event.description%>">
+        </div>
+
+        <!-- ##### switch this out later for better form element -->
+        <div>
+          <label for="city">Enter the name of the city where this event took place</label>
+          <input type="text" class="form-control" id="city" name="[life_event]city" placeholder="<%= @life_event.city %>">
+        </div>
+
+        <div class="form-group">
+          <label for="state">Enter the state where this event took place</label>
+          <input type="text" class="form-control" id="state" name="[life_event]state" value="<%= @life_event.state%>">
+        </div>     
+
+         <div class="form-group">
+          <label for="impact_rating">Enter a number (1-10) that represents the impact of this event</label>
+          <input type="text" class="form-control" id="[life_event]impact_rating" name="[life_event]impact_rating" placeholder="<%= @life_event.impact_rating %>">
+        </div>
+
+         <div class="form-group">
+          <label for="city">Enter the year when this life event occurred</label>
+          <input type="text" class="form-control" id="year" name="[life_event]year" placeholder="<%= @life_event.year%>">
+        </div>
+
+         <input type="hidden" name="_method" value="put" />
+        
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+
+       <form class="delete_form" action="/life_events/<%= @life_event.id %>" method="post">
+        <input type="hidden" name="_method" value="delete" />
+        <input class="delete_button2" type="submit" value="Delete" />
+      </form>
+    </div>
+  </div>
+</div>

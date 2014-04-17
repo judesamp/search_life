@@ -1,0 +1,64 @@
+<div class="jumbotron">
+  <h1>
+    Seek and you shall find (possibly)
+  </h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+<h3>Search schools</h3>
+
+<form class="search_form" action="/schools/results" method="post">
+  <p>Search by:</p>
+  <select class="form-control" name="[search]type">
+    <option>Name</option>
+    <option>City</option>
+    <option>State</option>
+    <option>Start_Year</option>
+    <option>End_Year</option>
+  </select>
+
+  <input type="text" placeholder="search" name="[search]criteria" />
+  <input type="submit"  />
+</form>
+</div>
+
+<div class="col-md-4">
+<h3>Search life events</h3>
+
+<form class="search_form" action="/life_events/results" method="post">
+  <p>Search by:</p>
+  <select class="form-control" name="[search]type">
+    <option>Name</option>
+    <option>City</option>
+    <option>State</option>
+    <option>Impact_Rating</option>
+    <option>Year</option>
+  </select>
+
+  <input type="text" placeholder="search" name="[search]criteria" />
+  <input type="submit"  />
+</form>
+</div>
+
+<div class="col-md-4">
+
+<h3>Search schools and life events</h3>
+
+<form class="search_form" action="/search" method="post">
+  <p>Search by:</p>
+  <select class="form-control" name="[search]type">
+    <option>Year</option>
+    <option>City</option>
+    <option>State</option>
+    <option>Name</option>
+  </select>
+
+  <input type="text" placeholder="search" name="[search]criteria" />
+  <input type="submit"  />
+</form>
+</div>
+
+</div>
+</div>

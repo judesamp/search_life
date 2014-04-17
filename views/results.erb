@@ -1,0 +1,47 @@
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="listed col-md-9 col-md-offset-2">
+      <h1>Events</h1>
+          <ul class="no_decoration list-group">
+            <% @life_events.each do |event| %>
+            
+              <li class="list-group-item">
+                <a href="/life_events/<%= event.id %>">
+                  <%= event.name %> – <%= event.description %>
+                </a>
+              </li>
+          <% end %>
+        </ul>
+    </div> 
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="listed col-md-9 col-md-offset-2">
+      <h1>Schools</h1>
+          <ul class="no_decoration list-group">
+          <% @schools.each do |school| %>
+            
+            
+              <li class="list-group-item">
+                <a href="/schools/<%= school.id %>">
+                  <%= school.name %> – <%= school.city %>
+                </a>
+              </li>
+
+            
+          <% end %>
+        </ul>
+
+          
+    </div> 
+  </div>
+</div>
+

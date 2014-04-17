@@ -1,0 +1,27 @@
+
+<div class="container">
+  <div class="row">
+    <div class="listed col-md-6 col-md-offset-3">
+
+      <p>Click on a life event to see more detailed information or click <a href="/life_events/new">here</a> to create a new life event.</p>
+          <ul class="no_decoration list-group">
+          <% @life_events.each do |event| %>
+            
+            
+              <li class="list-group-item">
+                <a href="/life_events/<%= event.id %>">
+                  <%= event.name %> (<%= event.year %>) <%= event.city %>, <%= event.state %>
+                </a>
+                <a href="/life_events/<%= event.id %>/edit" class="leftpadded pull-right">Edit</a>
+                <a href="/life_events/<%= event.id %>" class="view_link pull-right">View</a>
+              </li>
+
+            
+          <% end %>
+        </ul>
+
+
+          
+    </div> 
+  </div>
+</div>

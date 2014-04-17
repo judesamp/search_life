@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="show">
+    <h3 class="center_me"><%= @school.name %></h1>
+    <p><%= @school.city %>, <%= @school.state %></p>
+    <p><%= @school.start_year %>-<%= @school.end_year %></p>
+
+    </div>
+    <p>Click <a href="/schools/<%= @school.id %>/edit" class="leftpadded">here</a> to edit.</p>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+
+<div class="listed col-md-6 col-md-offset-3">
+  <div class="gray">
+    <div class="marge">
+      <h3>Create a New School</h1>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="marge2">
+
+      <form role="form" action="/schools" method="post">
+
+        <div class="form-group">
+          <label for="name">School name</label>
+          <input type="text" class="form-control" id="name" name="[school]name" placeholder="Enter a name for this school">
+        </div>
+
+        <div class="form-group">
+          <label for="city">Enter the city where this school is located</label>
+          <input type="text" class="form-control" id="city" name="[school]city"placeholder="City">
+        </div>
+
+        <!-- ##### switch this out later for better form element -->
+
+        <div class="form-group">
+          <label for="state">Enter the state where this school is located</label>
+          <input type="text" class="form-control" id="state" name="[school]state" placeholder="State">
+        </div>
+
+        <div class="form-group">
+          <label for="start_year">What year did you start this school?</label>
+          <input type="text" class="form-control" id="start_year" name="[school]start_year" placeholder="Start year">
+        </div>
+
+         <div class="form-group">
+          <label for="end_year">What year did you leave or graduate from this school?</label>
+          <input type="text" class="form-control" id="[school]end_year" name="impact_rating" placeholder="last year">
+        </div>
+        
+        <!-- implement at later date -->
+
+         <!-- <div class="form-group">
+          <label for="city">Did you graduate? </label>
+          <input type="text" class="form-control" id="date" name="[school]date" placeholder="Enter date">
+        </div> -->
+        
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
