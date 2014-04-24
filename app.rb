@@ -68,9 +68,9 @@ post "/schools" do
   # if clean_params.length == 0
   #   redirect '/error'
   # else
-  school = School.new(params[:school])
-  if school.save
-    redirect '/schools'
+  professor = Professor.new(params[:professor])
+  if professor.save
+    redirect '/professors'
   else
     redirect '/error'
   end
@@ -79,15 +79,15 @@ end
 
 
 # update
-put "/schools/:id" do
-  school_params = params[:school]
-  laundered_params = Helper.launder_params(school_params)
-  if school_params.length == 0
+put "/professor/:id" do
+  professor_params = params[:professor]
+  laundered_params = Helper.launder_params(professor_params)
+  if professor_params.length == 0
     redirect '/error'
   else
-    school = School.find(params[:id])
-    if school.update(laundered_params)
-      redirect "/schools/#{params[:id]}"
+    professor = Professor.find(params[:id])
+    if professor.update(laundered_params)
+      redirect "/professors/#{params[:id]}"
     else
       redirect "/"
     end
@@ -95,12 +95,12 @@ put "/schools/:id" do
 end
 
 # delete
-delete "/schools/:id" do
-  school = School.find(params[:id])
-  if school.delete
-    redirect "/schools"
+delete "/professors/:id" do
+  professor = Professor.find(params[:id])
+  if professor.delete
+    redirect "/professors"
   else
-    redirect "/schools/#{params[:id]}"
+    redirect "/professors/#{params[:id]}"
   end
 end
 
@@ -220,15 +220,3 @@ module Helper
     address =~ URI::regexp(["ftp", "http", "https"])
   end
 end
-
-
-
-  
-
-
-
-
-
-
-
-
