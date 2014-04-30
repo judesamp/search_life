@@ -68,9 +68,9 @@ post "/schools" do
   # if clean_params.length == 0
   #   redirect '/error'
   # else
-  professor = Professor.new(params[:professor])
-  if professor.save
-    redirect '/professors'
+  school = School.new(params[:school])
+  if school.save
+    redirect '/schools'
   else
     redirect '/error'
   end
@@ -79,15 +79,15 @@ end
 
 
 # update
-put "/professor/:id" do
-  professor_params = params[:professor]
-  laundered_params = Helper.launder_params(professor_params)
-  if professor_params.length == 0
+put "/schools/:id" do
+  school_params = params[:school]
+  laundered_params = Helper.launder_params(school_params)
+  if school_params.length == 0
     redirect '/error'
   else
-    professor = Professor.find(params[:id])
-    if professor.update(laundered_params)
-      redirect "/professors/#{params[:id]}"
+    school = School.find(params[:id])
+    if school.update(laundered_params)
+      redirect "/schools/#{params[:id]}"
     else
       redirect "/"
     end
@@ -95,12 +95,12 @@ put "/professor/:id" do
 end
 
 # delete
-delete "/professors/:id" do
-  professor = Professor.find(params[:id])
-  if professor.delete
-    redirect "/professors"
+delete "/schools/:id" do
+  school = School.find(params[:id])
+  if school.delete
+    redirect "/schools"
   else
-    redirect "/professors/#{params[:id]}"
+    redirect "/schools/#{params[:id]}"
   end
 end
 
